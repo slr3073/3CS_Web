@@ -3,7 +3,8 @@ const http = require('http')
 const fs = require('fs')
 const dateFormat = require('dateformat')
 const table = require('table')
-
+const Table = require('table-builder')
+const requestMod = require('request')
 //endregion
 
 function createSillyServer() {
@@ -80,7 +81,28 @@ function createCoffeeServer() {
     }).listen(3000)
 }
 
+function createGEOAPIServer(){
+    http.createServer(function (request, response) {
+
+        let URLParts = request.url.split('/');
+        let lastURLPart = URLParts.pop() || URLParts.pop();
+        if(lastURLPart !== 'favicon.ico' && parseInt(lastURLPart,10)){
+            requestMod("https://geo.api.gouv.fr/communes?codePostal=" + lastURLPart, function (error, response2, JSONData) {
+                if(error) throw error
+
+                response.writeHead(200, {"Content-Type": "text/html; charset=utf-8"})
+
+                let headers = { "nom" : "Name", "population": "Population"};
+                response.write((new Table({'class': 'some-table'})).setHeaders(headers).setData(JSON.parse(JSONData)).render());
+                response.end()
+            })
+        }
+    }).listen(3000)
+
+}
+
 //createSillyServer()
 //createHTMLServer()
 //createJSONServer()
-createCoffeeServer()
+//createCoffeeServer()
+createGEOAPIServer()
