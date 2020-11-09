@@ -1,0 +1,32 @@
+body {
+	font-family: Arial;
+}
+
+#buttons {
+	display: table-cell;
+	vertical-align: bottom;
+	width: 100px;
+}
+
+button {
+	width: 100px;
+}
+
+.column {
+	display: table-cell;
+	padding: 0 30px 25px 30px;
+	text-align: center;
+}
+
+#player {
+	border-right: 3px solid black;
+}
+
+#cpu{ }
+
+#result{
+	display: table-cell;
+	vertical-align: middle;
+	padding: 55px 0 0 20px;
+	width: 250px;
+}
