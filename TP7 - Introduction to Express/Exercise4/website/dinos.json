@@ -1,0 +1,57 @@
+{
+  "tyrannosaurus": {
+    "nomCommun": "Tyrannosaurus Rex",
+    "type": "Bipède carnassier",
+    "periode": "de 68 à 66 millions d'années",
+    "poids": "7 tonnes",
+    "longueur": "12 m",
+    "description": "Roi incontesté des dinosaures, le Tyrannosaure rex est immensément populaire grâce à une presse flatteuse, à d'innombrables rôles principaux dans des films comme 'Jurassic Park' et des émissions de télévision, et à son nom imposant : roi lézard tyran. Des fossiles impressionnants et des modèles de T. rex se tenant sur deux pattes arrière avec des bras courts tendus vers les visiteurs, voilà ce qui passionne les enfants de tous âges dans les musées. Avec un corps d'une longueur moyenne de 13 mètres et une tête d'un mètre cinquante, aux de dents acérées comme des rasoirs, il dispose d'un visage qu'on n'oublie pas facilement. D'après sa structure osseuse, il pesait probablement environ 7,5 tonnes (les éléphants d'Afrique adultes pèsent en moyenne 6 tonnes), et malgré sa taille, de nombreux paléontologues pensent qu'il pouvait efficacement courir après une proie et certainement distancer un humain.",
+    "image": "images/tyrannosaurus.jpg"
+  },
+  "triceratops": {
+    "nomCommun": "Tricératops",
+    "type": "Quadripède cuirassé herbivore",
+    "periode": "de 68 à 66 millions d'années",
+    "poids": "5.5 tonnes",
+    "longueur": "12 m",
+    "description": "Le plus reconnaissable de tous les dinosaures est probablement le Tricératops (visage à trois cornes), avec son bec de perroquet et son énorme collerette à l'arrière de la tête. Il combinait un tempérament doux et herbivore avec trois cornes à l'aspect effrayant qui étaient probablement utilisées à la fois pour faire la cour et pour tenir à distance les tyrannosaures et les rapaces affamés.",
+    "image": "images/triceratops.jpg"
+  },
+  "diplodocus": {
+    "nomCommun": "Diplodocus",
+    "type": "Quadripède herbivore à long cou",
+    "periode": "de 155 à 145 millions d'années",
+    "poids": "20 tonnes",
+    "longueur": "26 m",
+    "description": "On pense que le dinosaure Diplodocus avait un long cou utilisé pour atteindre à la fois la végétation basse et haute. Les scientifiques débattent encore de la façon dont le reptile a réussi à tenir un cou aussi long. Les paléontologues pensent maintenant que les ligaments qui allaient de l'arrière du cou à la hanche auraient permis au reptile de tenir son cou suffisamment bien sans utiliser de muscles. La colonne vertébrale est fendue en son milieu, et cet espace était utilisé pour maintenir des ligaments comme celui-ci. Les scientifiques pensent également que le reptile avait des épines étroites et pointues sur le dos.",
+    "image": "images/diplodocus.jpg"
+  },
+  "mosasaurus": {
+    "nomCommun": "Mosasaurus",
+    "type": "Prédateur marin",
+    "predateur": "true",
+    "periode": "il y a 70 millions d'années",
+    "poids": "15 tonnes",
+    "longueur": "15 m",
+    "description": "Le Mosasaurus était le plus grand dinosaure marin qui ait jamais existé. Il est également très célèbre, car il constitue une pièce maîtresse dans la plupart des musées. Il est également très connu pour avoir joué dans le film Jurassic World. Ce dinosaure marin a vécu à la fin du Crétacé, il y a environ 70 millions d'années. Il se caractérise par une tête d'alligator, une structure hydrodynamique et une nageoire sur la queue. Le dinosaure était massif, pesant environ 15 tonnes et mesurant environ 15 mètres de long. La créature se nourrissait de calmars, de crustacés et de poissons",
+    "image": "images/mosasaurus.jpg"
+  },
+  "pteranodon": {
+    "nomCommun": "Ptéranodon",
+    "type": "Diapside volant",
+    "periode": "de 86 à 84 millions d'années",
+    "poids": "entre 20 et 93 kg",
+    "longueur": "6 m d'envergure",
+    "description": "Le Pteranodon n’était pas un oiseau mais un reptile volant du Crétacé avec des ailes en peau, comme celles des chauves-souris. Les Pteranodons n’avaient pas de plumes mais plutôt un duvet pour leur tenir chaud. Contrairement à d’autres pterosaures, ce géant des airs n’avait pas de dents.",
+    "image": "images/pteranodon.jpg"
+  },
+  "salvanosaurus": {
+    "nomCommun": "Salvanosaurus Rex",
+    "type": "Reptile à petites mains",
+    "periode": "Y'a longtemps frère",
+    "poids": "Fat as fuck",
+    "longueur": "1m70 (de large)",
+    "description": "Le Salvanosaurus Rex posède une tête rectangulaire massive lui conférant un QI de 143 !",
+    "image": "images/salvanosaurus.jpg"
+  }
+}
