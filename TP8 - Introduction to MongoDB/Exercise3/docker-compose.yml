@@ -1,0 +1,23 @@
+version: "2"
+services:
+  nodeserver:
+    container_name: rsalvan_node
+    image: "node:alpine"
+    user: "node"
+    working_dir: /home/node/app
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - "10010:3000"
+    command: "npm start"
+    links:
+      - mongodb
+  mongodb:
+    container_name: rsalvan_mongodb
+    image: "mongo:4.0"
+    volumes:
+      - db_volume:/data/db
+
+volumes:
+  db_volume:
+    external: true
