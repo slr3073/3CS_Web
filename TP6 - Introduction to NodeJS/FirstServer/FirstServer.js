@@ -98,11 +98,10 @@ function createGEOAPIServer(){
             })
         }
     }).listen(3000)
-
 }
 
 //createSillyServer()
-//createHTMLServer()
+createHTMLServer()
 //createJSONServer()
 //createCoffeeServer()
-createGEOAPIServer()
+//createGEOAPIServer()

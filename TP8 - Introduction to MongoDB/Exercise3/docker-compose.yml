@@ -1,7 +1,7 @@
 version: "2"
 services:
   nodeserver:
-    container_name: rsalvan_node
+    container_name: rsalvan_node2
     image: "node:alpine"
     user: "node"
     working_dir: /home/node/app
