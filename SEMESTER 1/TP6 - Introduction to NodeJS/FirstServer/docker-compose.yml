@@ -1,0 +1,12 @@
+version: "2"
+services:
+  nodeserver:
+    container_name: rsalvan_node
+    image: "node:alpine"
+    user: "node"
+    working_dir: /home/node/app
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - "10010:3000"
+    command: npm start
