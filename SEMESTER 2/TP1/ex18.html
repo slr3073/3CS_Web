@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script type="text/javascript">
+
+			$(document).ready(function() {
+
+				//simplifiée
+				$.getJSON( "contenuJSON.txt", function( data ) {
+					$('input[name="nom"]').val(data.nom);
+					$('input[name="prenom"]').val(data.prenom);
+					
+					$('#adresse').html(data.adresse.rue + "<br/>" +
+					data.adresse.cp + " " +
+					data.adresse.ville);
+					
+					$('#contacts tr:nth-child(2) td:first-child').text("ici");
+					
+					$.each( data.contacts, function( key, val ) {
+						console.log(key);
+						$('#contacts tr:nth-child('+(key+1)+') td:first-child').text(val.type);
+						$('#contacts tr:nth-child('+(key+1)+') td:last-child').text(val.numero);
+					});
+				});
+				
+			});
+			
+		</script>
+		<style>
+		
+		</style>
+	</head>
+	<body>
+		<h1>Fiche contact</h1>
+		<div>
+			<label>Nom</label>
+			<input type='input' name='nom'>
+		</div>
+		<div>
+			<label>Prénom</label>
+			<input type='input' name='prenom'>
+		</div>
+		<h2>Adresse</h2>
+		<p id="adresse"></p>
+		<h2>Téléphone(s)</h2>
+		<table id="contacts">
+			<tr><td></td><td></td></tr>
+			<tr><td></td><td></td></tr>
+			<tr><td></td><td></td></tr>
+			<tr><td></td><td></td></tr>
+		</table>
+	</body>
+</html>		
+	
+

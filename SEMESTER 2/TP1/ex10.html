@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				//1) ajouter un bouton masquer pour chaque question
+				$(".question").each(function() {
+					$(this).append("<button>masquer</button>");
+				});
+				
+				//2) Lorsque masquer est cliqué, la réponse est cachée,
+				//et le bouton est remplacé par un bouton afficher
+				//3) Lorsque afficher est cliqué, la réponse est réaffichée
+				//et le bouton est remplacé par un bouton masuqer à nouveau
+				$("button").click(function() {
+					console.log($(this).text())
+					if ($(this).text() == "afficher") {
+						$(this).siblings(".reponse").show();
+						$(this).text("masquer");
+					} else {
+						$(this).siblings(".reponse").hide();
+						$(this).text("afficher");
+						//attention, pas de replaceWith, sinon c'est un nouveau bouton
+						//et il ne répond pas aux événements de ce code
+					}
+				});
+				
+			
+			});
+			
+		</script>
+	</head>
+	<body>
+		<p class="question">Quelle est la couleur ... ? <span class="reponse">Blanc</span></p>
+		<p class="question">Quelle est la date ... ? <span class="reponse">2001</span></p>
+		<p class="question">Quelle est le pays ... ? <span class="reponse">La France</span></p>
+		
+	</body>
+</html>	

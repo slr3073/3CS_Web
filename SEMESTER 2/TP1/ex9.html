@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script type="text/javascript">
+
+			$(document).ready(function() {
+
+				//1) formulaire de chat
+				$('#chat').submit(function() {
+					event.preventDefault();
+					texte = $('input[name=phrase]').val();
+					texte = "<span class='ligne'>"+texte+"</span>";
+					$('#content').append(texte);
+					$('input[name=phrase]').val('');
+					
+					//2) surbrillance des lignes
+					$('.ligne:last').bind( "click", function() {
+						$(this).replaceWith("");
+					});
+					
+				});
+			});
+			
+		</script>
+		<style>
+			#content {
+				width : 300px;
+				height: 200px;
+				border:1px dotted black;
+			}
+			.ligne {
+				display:block;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="content">
+		</div>
+		<div>
+			<form id="chat">
+				<input type="text" name="phrase">
+				<input type="submit" value="Envoyer">
+			</form>
+		</div>
+	</body>
+</html>		
+	
+

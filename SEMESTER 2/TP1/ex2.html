@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<style>
+		.categorie {
+			float:left;
+			width:45%;
+			padding : 5 10 10 10;
+			margin: 0 10 0 0;
+		}
+		#pour {
+			border : 1px solid #00FF00;
+		}
+		#contre {
+			
+			border : 1px solid #FF0000;
+		}
+
+		</style>
+	</head>
+	<body>
+		<h1>Le pour et le contre de jouer à World of Warcraft</h1>
+		<div id="arguments">
+			<p class="pour">Divertissant</p>
+			<p class="pour">Jouer avec des amis en ligne</p>
+			<p class="contre">Perdre la notion du temps durant les raids</p>
+			<p class="pour">Pas d'isolement social</p>
+			<p class="contre">Oubli de faire ses devoirs</p>
+			<p class="contre">Coût non négligeable</p>
+		</div>
+		<div id="pour" class="categorie"><h2>Pour :</h2></div>
+		<div id="contre" class="categorie"><h2>Contre :</h2></div>
+		</style>
+
+		<script type="text/javascript">
+
+				$('#pour').append($('#arguments').html());
+				$('#contre').append($('#arguments').html());
+				$('#arguments').html('');
+			
+				$('#pour p.contre').text('');
+				$('#contre p.pour').text('');
+			
+		</script>
+	</body>
+</html>		
+	

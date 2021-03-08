@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script type="text/javascript">
+
+			$(document).ready(function() {
+				
+				$('input[name="reset"]').click(function() {
+					$('input[type=text]').val('');
+					$('input[type=radio]').prop('checked', false);
+					$('option').prop('selected', false);
+					$('textarea').val('');
+				});
+				
+				$('form').submit(function(e) {
+					e.preventDefault();
+					console.log("formulaire soumis");
+				});
+				
+			});
+			
+			
+		</script>
+		<style>
+		label {
+			font-style: italic;
+		}
+		</style>
+	</head>
+	<body>
+		<h2>Nouvel utilisateur</h2>
+		<form action="#">
+			<div><label>Nom</label></div>
+			<div><input type=text name="nom"></div>
+			<div><label>Prénom</label></div>
+			<div><input type=text name="prenom"></div>
+			<div><label>Sexe</label></div>
+			<div>
+				Homme : <input type=radio name="sexe" value="M">
+				Femme : <input type=radio name="sexe" value="F">
+			</div>
+			<div><label>Fonction</label></div>
+			<div><select name="fonction">
+				<option value="void">Non renseigné</option>
+				<option value="enseignant">Enseignant</option>
+				<option value="etudiant">Etudiant</option>
+			</select></div>
+			<div><label>Commentaires</label></div>
+			<div><textarea rows="5" name="commentaires"></textarea></div>
+			<div>
+				<input type="button" name="reset" value="Réinitialiser">
+				<input type="submit" value="Envoyer">
+			</div>
+		</form>
+	</body>
+</html>		
+	

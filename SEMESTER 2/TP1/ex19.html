@@ -1,0 +1,108 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            jQuery.ajax({
+                type: 'GET',
+                url: 'questions.xml',
+                dataType: 'xml',
+                success: function (data, textStatus, jqXHR) {
+                    $('#content').prepend('<form>');
+                    $(data).find('question').each(function () {
+                        var id = $(this).attr('id');
+                        var reponse = $(this).attr('reponse');
+                        var libelle = $(this).find('libelle').text();
+                        $('form').append('<div class="question" id="' + id + '"><p class="libelle">' + id + ". " + libelle + '</p></div>');
+                        $(this).find("propositions").children().each(function () {
+                            var idp = $(this).attr('id');
+                            var val = $(this).text();
+                            var prop = $('<span />').html(val)
+                            if (idp == reponse) {
+                                $(prop).attr('class', 'bonne');
+                            }
+                            $(prop).prepend("<input type=radio name=" + id + " value=" + val + ">");
+                            $('div#' + id).append(prop);
+                        });
+                        $('div#' + id).append('<span class="correct"> Correct</span>').append('<span class="incorrect"> Incorrect</span>');
+                    });
+
+                    $('form').append('<p><input type="submit" value="Envoyer"></p>');
+
+                    $('form').submit(function (event) {
+                        event.preventDefault();
+                        $('input[type=submit]').attr("disabled", true);
+                        var score = 0;
+                        var scoreMax = 0;
+                        $('form div').each(function () {
+                            var bonneReponse = $(this).children('span').filter('.bonne').text();
+                            var reponse = $(this).find('input[type=radio]:checked').val();
+                            if (reponse == bonneReponse) {
+                                //$(this).find('.correct').show();
+                                score++;
+                            } else {
+                                //$(this).find('.incorrect').show();
+                            }
+                            scoreMax++;
+                        });
+                        $('#score').text(score + "/" + scoreMax);
+                        $('#resultat').animate({
+                            top: '100px'
+                        }, 500, function () {
+                            // Animation complete.
+                        });
+                    });
+
+                    $('form span.correct').hide();
+                    $('form span.incorrect').hide();
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    // Une erreur s'est produite lors de la requete
+                    $('body').html("Oups, AJAX a échoué.<br><h1>" + textStatus + "</h1><br/>" + errorThrown);
+
+                }
+            });
+
+        });
+
+    </script>
+    <style>
+        .question {
+            background-color: #f0f0f0;
+            padding: 2px;
+            margin-top: 5px;
+        }
+
+        .libelle {
+            color: #0000FF;
+        }
+
+        #resultat {
+            position: absolute;
+            width: 300px;
+            height: 200px;
+            left: 50%;
+            top: -500px;
+            margin-left: -150px;
+            padding-top: 50px;
+            text-align: center;
+            border: 1px dotted black;
+            font-size: 150%;
+            background-color: #FFFFFF;
+        }
+
+        #resultat #score {
+            font-size: 300%;
+        }
+    </style>
+</head>
+<body>
+<div id="content"></div>
+<div id="resultat">Le QCM est terminé, votre score est de<br/><span id="score">?</span>
+</body>
+</html>		
+	
+

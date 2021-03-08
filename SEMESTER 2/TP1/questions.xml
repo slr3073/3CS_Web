@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<questions>
+	<question id='1' reponse='2'>
+		<libelle>Quelle est la couleur ... ?</libelle>
+		<propositions>
+			<proposition id='1'>bleu</proposition>
+			<proposition id='2'>blanc</proposition>
+			<proposition id='3'>rouge</proposition>
+		</propositions>
+	</question>
+	<question id='2' reponse='3'>
+		<libelle>En quelle année ... ?</libelle>
+		<propositions>
+			<proposition id='1'>1998</proposition>
+			<proposition id='2'>2000</proposition>
+			<proposition id='3'>2006</proposition>
+		</propositions>
+	</question>
+	<question id='3' reponse='2'>
+		<libelle>Quel adjectif ... ?</libelle>
+		<propositions>
+			<proposition id='1'>fragile</proposition>
+			<proposition id='2'>gracile</proposition>
+			<proposition id='3'>rétif</proposition>
+		</propositions>
+	</question>
+	<question id='4' reponse='1'>
+		<libelle>Combien y-a-t'il ... ?</libelle>
+		<propositions>
+			<proposition id='1'>5</proposition>
+			<proposition id='2'>7</proposition>
+			<proposition id='3'>8</proposition>
+		</propositions>
+	</question>
+	<question id='5' reponse='3'>
+		<libelle>De quelle direction ... ?</libelle>
+		<propositions>
+			<proposition id='1'>nord</proposition>
+			<proposition id='2'>sud</proposition>
+			<proposition id='3'>ouest</proposition>
+		</propositions>
+	</question>
+</questions>

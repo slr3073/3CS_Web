@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+<script>
+    function get(uneUrl) {
+        return new Promise(((resolve, reject) => {
+            $.get(uneUrl, resolve).fail(reject)
+        }))
+    }
+
+    get("https://jsonplaceholder.typicode.com/todos/1").then(resultat => {
+        console.log(resultat)
+
+    })
+</script>
+</body>
+</html>

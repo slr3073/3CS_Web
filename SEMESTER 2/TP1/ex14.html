@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script type="text/javascript">
+
+			$(document).ready(function() {
+
+				$('#remplissage').animate(
+					{ width: '500px' },
+					{
+						//easing: 'swing',
+						duration: 5000,
+						step : function(n) {
+							$('#remplissage').text(Math.floor(n/5)+"%");
+						},
+						complete: function(){ 
+							$('#remplissage').css('background-color','#00ff00').text("Terminé"); 
+						}
+					});
+			});
+			
+			
+		</script>
+		<style>
+			#barre {
+				width : 500px;
+				height: 20px;
+				border:1px dotted black;
+			}
+			#remplissage {
+				width : 0px;
+				background-color : #9ED9FF;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="barre">
+			<div id="remplissage">&nbsp;</div>
+		</div>
+	</body>
+</html>		
+	
+

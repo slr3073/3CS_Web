@@ -1,0 +1,102 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<style>
+	
+		.positif {
+			color: green;
+		}
+		
+		.negatif {
+			color: red;
+		}
+		
+		.tableau {
+			font-family:Arial, Helvetica, sans-serif;
+			color:#666;
+			font-size:12px;
+			text-shadow: 1px 1px 0px #fff;
+			background:#eaebec;
+			margin:20px;
+			border:#ccc 1px solid;
+
+			-moz-border-radius:3px;
+			-webkit-border-radius:3px;
+			border-radius:3px;
+
+			-moz-box-shadow: 0 1px 2px #d1d1d1;
+			-webkit-box-shadow: 0 1px 2px #d1d1d1;
+			box-shadow: 0 1px 2px #d1d1d1;
+		}
+		
+		.tableau th {
+			padding:21px 25px 22px 25px;
+			border-top:1px solid #fafafa;
+			border-bottom:1px solid #e0e0e0;
+
+			background: #ededed;
+			background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
+			background: -moz-linear-gradient(top,  #ededed,  #ebebeb);
+		}
+		
+		.ligne {
+			padding:21px 25px 22px 25px;
+			border-top:1px solid #fafafa;
+			border-bottom:1px solid #e0e0e0;
+
+			background: #ededed;
+			background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
+			background: -moz-linear-gradient(top,  #ededed,  #ebebeb);
+		}
+		
+		.cellule {
+			padding:18px;
+			border-top: 1px solid #ffffff;
+			border-bottom:1px solid #e0e0e0;
+			border-left: 1px solid #e0e0e0;
+
+			background: #fafafa;
+			background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
+			background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
+		}
+		</style>
+	</head>
+	<body>
+		<table>
+			<caption>Températures minimales</caption>
+			<tr>
+				<th>&nbsp;</th><th>janvier</th><th>février</th><th>mars</th>
+			</tr>
+			<tr>
+				<th>Albi</th><td>0</td><td>1</td><td>5</td>
+			</tr>
+			<tr>
+				<th>Gaillac</th><td>-4</td><td>0</td><td>3</td>
+			</tr>
+			<tr>
+				<th>Castres</th><td>-7</td><td>-3</td><td>3</td>
+			</tr>
+		</table>
+		<script type="text/javascript">
+
+			//1) Appliquez les styles correspondants
+			$('table').addClass('tableau');
+			$('tr').addClass('ligne');
+			$('td').addClass('cellule');
+
+			//2) Ajoutez les unités à toutes les valeurs
+			$('td').append("°C")
+			
+			//3) Ajoutez la mise en forme conditionnelle suivante :
+			$('td').each(function () {
+				var val = parseInt($(this).text());
+				if (val > 0)
+					$(this).addClass('positif');
+				else if (val < 0)
+					$(this).addClass('negatif');
+			});
+			
+		</script>
+	</body>
+</html>	
